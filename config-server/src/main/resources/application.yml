@@ -1,0 +1,25 @@
+server:
+  port: 8000
+
+spring:
+  profiles:
+    active: native
+
+  application:
+    name: config-server
+
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:D:/Manvith/game_verse/gameverse-config/
+
+eureka:
+  instance:
+    hostname: localhost  # Override with localhost
+    prefer-ip-address: true  # Register with IP instead of hostname
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
